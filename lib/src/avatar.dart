@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
+// ignore: implementation_imports
+import 'package:flutter_advanced_avatar/src/string_util.dart';
 import 'package:zxbase_flutter_ui/src/ui.dart';
 
 enum AvatarStatus { unknown, offline, online }
@@ -50,23 +52,22 @@ class Avatar {
   }
 
   static AdvancedAvatar peer(
-      {required String nickname,
+      {required String name,
       required AvatarStatus status,
       int unread = 0,
       double size = 40,
       double fontSize = 18,
       double statusSize = UI.badgeSize}) {
-    if (nickname.trim() == '') {
-      nickname = 'John Doe';
+    if (name.trim() == '') {
+      name = 'John Doe';
     }
-    List<String> words = nickname.trim().split(' ');
-    int ind = words.isNotEmpty ? words[0].codeUnitAt(0) : 0;
-    ind += words.length > 1 ? words[1].codeUnitAt(0) : 0;
 
-    Color avatarColor = _colors[ind % _colors.length];
+    final abbreviation = name.toAbbreviation();
+    final code = abbreviation.codeUnits.reduce((a, b) => a + b);
+    final avatarColor = _colors[code % _colors.length];
 
     return AdvancedAvatar(
-        name: nickname,
+        name: name,
         size: size,
         style: TextStyle(fontSize: fontSize),
         decoration: BoxDecoration(
