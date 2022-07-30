@@ -9,7 +9,7 @@ enum AvatarStatus { unknown, offline, online }
 class Avatar {
   static const String logo = 'assets/images/wt_32.png';
 
-  static final List<Color> _colors = [
+  static const List<Color> _colors = [
     Colors.pink,
     Colors.cyan,
     Colors.red,
@@ -25,19 +25,19 @@ class Avatar {
     AvatarStatus.online: Colors.green.shade600
   };
 
-  static final Map<AvatarStatus, Color> _borderColor = {
+  static const Map<AvatarStatus, Color> _borderColor = {
     AvatarStatus.unknown: Colors.white,
     AvatarStatus.offline: Colors.grey,
     AvatarStatus.online: Colors.white
   };
 
   static AdvancedAvatar me({double size = 40}) {
-    Color avatarColor = const Color(0xFF2196F3);
+    const avatarColor = Color(0xFF2196F3);
 
     return AdvancedAvatar(
       size: size,
       image: const AssetImage(logo),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: avatarColor,
           gradient: LinearGradient(
@@ -45,8 +45,8 @@ class Avatar {
               Colors.white,
               avatarColor,
             ],
-            begin: const Alignment(-3.0, -3.0),
-            end: const Alignment(0.0, 0.0),
+            begin: Alignment(-3.0, -3.0),
+            end: Alignment(0.0, 0.0),
           )),
     );
   }
