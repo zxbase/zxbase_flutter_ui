@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -rf coverage
+flutter test --coverage
+genhtml coverage/lcov.info --no-function-coverage -o coverage
+open coverage/index.html
