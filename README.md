@@ -2,6 +2,8 @@ Shared UI components.
 
 ## Features
 
+- Desktop / mobile detection.
+- Fonts.
 - Avatar.
 
 ## Getting started
@@ -20,4 +22,5 @@ import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 ## Usage
 
 Check examples in test files:
-  - test/avatar_test.dart  
+  - test/avatar_test.dart
+  - test/ui_test.dart
