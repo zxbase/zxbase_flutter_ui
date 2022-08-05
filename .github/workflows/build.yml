@@ -1,0 +1,51 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+        run: flutter --version
+
+      - name: Install system packages
+        run: sudo apt-get install -y lcov
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Verify formatting
+        run: flutter format --output=none --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: flutter analyze --fatal-infos
+
+      - name: Run tests
+        run: flutter test --coverage
+
+      - name: Upload code coverage artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: coverage
+
+      - name: Upload code coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: ./coverage/
+          fail_ci_if_error: true
+          name: codecov-umbrella
+          verbose: true
