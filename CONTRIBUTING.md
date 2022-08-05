@@ -15,7 +15,7 @@ tool/analyze
 
 Pass tests.
 ```
-dart test
+tool/test
 ```
 
 Check coverage is not degrading.
