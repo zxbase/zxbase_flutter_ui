@@ -55,4 +55,14 @@ void main() {
     var results = ['January 1, 1970 12:58 AM', 'December 31, 1969 04:58 PM'];
     expect(results.contains(HumanTime.shortDateTimeFromTS(ts)), equals(true));
   });
+
+  test('timezone', () async {
+    DateTime dt = DateTime.utc(2021, 08, 09);
+    expect(HumanTime.tz(dt), equals('UTC (0)'));
+  });
+
+  test('precise time', () async {
+    DateTime dt = DateTime.utc(2021, 08, 09);
+    expect(HumanTime.preciseTime(dt), equals('August 9, 2021 12:00:00 AM'));
+  });
 }

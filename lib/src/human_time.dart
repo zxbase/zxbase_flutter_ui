@@ -19,17 +19,17 @@ import 'package:timeago/timeago.dart' as timeago;
 
 class HumanTime {
   /// 12:00 AM
-  static String time(DateTime date) {
-    return DateFormat('hh:mm a').format(date).toString();
+  static String time(DateTime dt) {
+    return DateFormat('hh:mm a').format(dt).toString();
   }
 
   /// Current year: Tuesday, August 9
   /// Previous years: Monday, August 9, 2021
-  static String date(DateTime date) {
-    String rv = DateFormat.MMMMEEEEd().format(date);
+  static String date(DateTime dt) {
+    String rv = DateFormat.MMMMEEEEd().format(dt);
 
-    if (DateTime.now().year != date.year) {
-      rv += ', ${date.year}';
+    if (DateTime.now().year != dt.year) {
+      rv += ', ${dt.year}';
     }
 
     return rv;
@@ -37,11 +37,11 @@ class HumanTime {
 
   /// Current year: August 9
   /// Previous years: August 9, 2021
-  static String shortDate(DateTime date) {
-    String rv = DateFormat.MMMMd().format(date);
+  static String shortDate(DateTime dt) {
+    String rv = DateFormat.MMMMd().format(dt);
 
-    if (DateTime.now().year != date.year) {
-      rv += ', ${date.year}';
+    if (DateTime.now().year != dt.year) {
+      rv += ', ${dt.year}';
     }
 
     return rv;
@@ -49,8 +49,8 @@ class HumanTime {
 
   /// Current year: Tuesday, August 9 12:00 AM
   /// Previous years: Monday, August 9, 2021 12:00 AM
-  static String dateTime(DateTime dateTime) {
-    return '${date(dateTime)} at ${time(dateTime)}';
+  static String dateTime(DateTime dt) {
+    return '${date(dt)} at ${time(dt)}';
   }
 
   /// Current year: August 9 12:00 AM
@@ -61,12 +61,30 @@ class HumanTime {
   }
 
   /// 'about an hour ago'
-  static String lastSeen(DateTime date) {
-    return timeago.format(date);
+  static String lastSeen(DateTime dt) {
+    return timeago.format(dt);
   }
 
   /// 'about an hour ago'
   static String lastSeenFromTS(int ts) {
     return timeago.format(DateTime.fromMillisecondsSinceEpoch(ts));
+  }
+
+  /// PDT (-7)
+  static String tz(DateTime dt) {
+    return '${dt.timeZoneName} (${dt.timeZoneOffset.inHours})';
+  }
+
+  /// Today: 12:00:00 AM
+  /// This year: August 9 12:00:00 AM
+  /// Previous years: August 9, 2021 12:00:00 AM
+  static String preciseTime(DateTime dt) {
+    String time = DateFormat('hh:mm:ss a').format(dt).toString();
+
+    if (DateTime.now().day != dt.day) {
+      return '${shortDate(dt)} $time';
+    } else {
+      return time;
+    }
   }
 }
