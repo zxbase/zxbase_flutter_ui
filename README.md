@@ -10,6 +10,7 @@ Shared UI components.
 - Desktop / mobile detection.
 - Fonts.
 - Avatar.
+- Human date and time representation.
 
 ## Getting started
 

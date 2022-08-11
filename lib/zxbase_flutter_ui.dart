@@ -15,4 +15,5 @@
 library zxbase_flutter_ui;
 
 export 'src/avatar.dart';
+export 'src/human_time.dart';
 export 'src/ui.dart';
