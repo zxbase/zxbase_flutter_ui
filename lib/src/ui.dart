@@ -16,15 +16,15 @@ import 'dart:io';
 
 class UI {
   /// System.
-  static bool isDesktop =
+  static final bool isDesktop =
       Platform.isMacOS || Platform.isWindows || Platform.isLinux;
-  static bool isMobile = Platform.isIOS || Platform.isAndroid;
+  static final bool isMobile = Platform.isIOS || Platform.isAndroid;
 
   /// Fonts.
-  static double get fontSizeXSmall => isDesktop ? 10 : 12;
-  static double get fontSizeSmall => isDesktop ? 12 : 14;
-  static double get fontSizeMedium => isDesktop ? 14 : 16;
-  static double get fontSizeLarge => isDesktop ? 18 : 20;
+  static final double fontSizeXSmall = isDesktop ? 10 : 12;
+  static final double fontSizeSmall = isDesktop ? 12 : 14;
+  static final double fontSizeMedium = isDesktop ? 14 : 16;
+  static final double fontSizeLarge = isDesktop ? 18 : 20;
 
   /// Misc.
   static const double badgeSize = 10;
