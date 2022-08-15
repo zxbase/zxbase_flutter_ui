@@ -1,3 +1,7 @@
+## 1.3.0
+
+- Text styles and sizes
+
 ## 1.2.0
 
 - Human date and time representation.
