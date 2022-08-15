@@ -28,4 +28,6 @@ class UI {
 
   /// Misc.
   static const double badgeSize = 10;
+  static final double appBarTextFactor = isMobile ? 1.3 : 1.4;
+  static final double appBarLeadWidth = isMobile ? 82 : 74;
 }
