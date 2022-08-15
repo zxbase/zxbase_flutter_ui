@@ -13,12 +13,12 @@
 // limitations under the License.
 
 import 'dart:io';
+import 'package:flutter/material.dart';
 
 class UI {
   /// System.
-  static final bool isDesktop =
-      Platform.isMacOS || Platform.isWindows || Platform.isLinux;
   static final bool isMobile = Platform.isIOS || Platform.isAndroid;
+  static bool isDesktop = !isMobile;
 
   /// Fonts.
   static final double fontSizeXSmall = isDesktop ? 10 : 12;
@@ -26,8 +26,37 @@ class UI {
   static final double fontSizeMedium = isDesktop ? 14 : 16;
   static final double fontSizeLarge = isDesktop ? 18 : 20;
 
-  /// Misc.
+  /// Misc constants.
   static const double badgeSize = 10;
   static final double appBarTextFactor = isMobile ? 1.3 : 1.4;
   static final double appBarLeadWidth = isMobile ? 82 : 74;
+
+  /// Helpers.
+  static TextStyle highlightedTextStyle =
+      const TextStyle(color: Colors.black, backgroundColor: Colors.yellow);
+
+  static TextStyle urlStyle = const TextStyle(
+    color: Colors.blueAccent,
+    decoration: TextDecoration.underline,
+  );
+
+  static double? listTitleFontSize(BuildContext context) {
+    return isDesktop
+        ? Theme.of(context).textTheme.bodyMedium!.fontSize
+        : Theme.of(context).textTheme.titleMedium!.fontSize;
+  }
+
+  static double? listSubtitleFontSize(BuildContext context) {
+    return Theme.of(context).textTheme.subtitle2!.fontSize;
+  }
+
+  static TextStyle listTrailingTextStyle(
+      BuildContext context, bool isSelected) {
+    TextStyle style = TextStyle(fontSize: UI.fontSizeSmall);
+    if (isSelected) {
+      return style;
+    }
+    return style
+        .merge(TextStyle(color: Theme.of(context).textTheme.caption!.color!));
+  }
 }

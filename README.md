@@ -29,4 +29,5 @@ import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 
 Check examples in test files:
   - test/avatar_test.dart
+  - test/human_time_test.dart
   - test/ui_test.dart

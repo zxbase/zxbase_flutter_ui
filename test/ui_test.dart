@@ -12,8 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
+
+class MockBuildContext extends Mock implements BuildContext {}
 
 void main() {
   test('Detect desktop vs mobile', () {
@@ -26,5 +30,23 @@ void main() {
     expect(UI.fontSizeSmall, 12);
     expect(UI.fontSizeMedium, 14);
     expect(UI.fontSizeLarge, 18);
+  });
+
+  test('Misc constants', () {
+    expect(UI.appBarTextFactor, 1.4);
+    expect(UI.appBarLeadWidth, 74);
+  });
+
+  test('Text styles', () {
+    MockBuildContext mockContext = MockBuildContext();
+    expect(UI.highlightedTextStyle.backgroundColor, Colors.yellow);
+    expect(UI.urlStyle.color, Colors.blueAccent);
+    expect(UI.listTitleFontSize(mockContext), 14);
+    expect(UI.listSubtitleFontSize(mockContext), 14);
+    expect(UI.listTrailingTextStyle(mockContext, true).color, null);
+    expect(UI.listTrailingTextStyle(mockContext, false).color, Colors.black54);
+
+    UI.isDesktop = false;
+    expect(UI.listTitleFontSize(mockContext), 16);
   });
 }
