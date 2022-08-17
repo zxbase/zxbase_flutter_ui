@@ -1,3 +1,7 @@
+## 1.4.0
+
+- History controller supporting undo/redo.
+
 ## 1.3.0
 
 - Text styles and sizes

@@ -12,6 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/// Undo/redo was introduced in stable channel.
+/// https://github.com/flutter/flutter/pull/96968
+/// It is not connected to gestures on mobile yet,
+/// but promising enough to walk away from homegrown
+/// implementation.
+
 /// TextEditingController with undo and redo functionality.
 /// Includes controllers' text and selection.
 /// Use save() to record current state.
