@@ -1,3 +1,7 @@
+## 1.5.0
+
+- Password strength meter.
+
 ## 1.4.0
 
 - History controller supporting undo/redo.
