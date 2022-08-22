@@ -7,10 +7,11 @@ Shared UI components.
 
 ## Features
 
+- Avatar.
 - Desktop / mobile detection.
 - Fonts.
-- Avatar.
 - Human date and time representation.
+- Password strength meter.
 
 ## Getting started
 
@@ -30,4 +31,5 @@ import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 Check examples in test files:
   - test/avatar_test.dart
   - test/human_time_test.dart
+  - test/password_meter_test.dart
   - test/ui_test.dart
