@@ -14,6 +14,7 @@
 
 library zxbase_flutter_ui;
 
+export 'src/app_theme.dart';
 export 'src/avatar.dart';
 export 'src/history_controller.dart';
 export 'src/human_time.dart';
