@@ -15,10 +15,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-// import 'package:mockito/mockito.dart';
 import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
-
-// class MockBuildContext extends Mock implements BuildContext {}
 
 void main() {
   test('Build light theme', () {

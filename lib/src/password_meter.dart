@@ -16,7 +16,6 @@
 /// Based on password score in the range [0,4] and length.
 
 import 'package:flutter/material.dart';
-import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 
 class PasswordMeter {
   static final _caption = ['', 'Very weak', 'Weak', 'Fair', 'Good', 'Strong'];
@@ -38,27 +37,37 @@ class PasswordMeter {
         backgroundColor: Colors.grey);
   }
 
-  static Widget caption(int index) {
+  static Widget caption(int index, BuildContext context) {
+    TextStyle captionStyle = Theme.of(context)
+        .textTheme
+        .caption!
+        .copyWith(color: Theme.of(context).hintColor);
+    TextStyle assessmentStyle =
+        Theme.of(context).textTheme.titleSmall!.copyWith(color: _color[index]);
+
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Text(
         textAlign: TextAlign.start,
-        'Password strength:',
-        style: TextStyle(fontSize: UI.fontSizeMedium),
+        'Password strength',
+        style: captionStyle,
       ),
       Text(
         textAlign: TextAlign.end,
         _caption[index],
-        style: TextStyle(color: _color[index], fontSize: UI.fontSizeMedium),
+        style: assessmentStyle,
       ),
     ]);
   }
 
-  static Widget full({required double score, required bool isEmpty}) {
+  static Widget full(
+      {required double score,
+      required bool isEmpty,
+      required BuildContext context}) {
     final index = isEmpty ? 0 : score.floor() + 1;
     return Column(children: [
-      caption(index),
+      caption(index, context),
       Padding(
-          padding: const EdgeInsets.only(top: 10), child: discreteBar(index)),
+          padding: const EdgeInsets.only(top: 5), child: discreteBar(index)),
     ]);
   }
 }

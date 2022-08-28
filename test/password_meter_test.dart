@@ -14,14 +14,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
+
+class MockBuildContext extends Mock implements BuildContext {}
+
+MockBuildContext mockContext = MockBuildContext();
 
 void main() {
   testWidgets('Password meter has a caption and strength', (tester) async {
     await tester.pumpWidget(Directionality(
         textDirection: TextDirection.ltr,
-        child: PasswordMeter.full(score: 0, isEmpty: false)));
-    final caption = find.text('Password strength:');
+        child: PasswordMeter.full(
+            score: 0, isEmpty: false, context: mockContext)));
+    final caption = find.text('Password strength');
     final strength = find.text('Very weak');
 
     expect(caption, findsOneWidget);
@@ -31,8 +37,9 @@ void main() {
   testWidgets('Password meter has no strength', (tester) async {
     await tester.pumpWidget(Directionality(
         textDirection: TextDirection.ltr,
-        child: PasswordMeter.full(score: 5, isEmpty: true)));
-    final caption = find.text('Password strength:');
+        child:
+            PasswordMeter.full(score: 5, isEmpty: true, context: mockContext)));
+    final caption = find.text('Password strength');
     final strength = find.text('');
 
     expect(caption, findsOneWidget);
