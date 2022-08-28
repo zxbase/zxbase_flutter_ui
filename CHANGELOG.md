@@ -1,3 +1,7 @@
+## 1.6.0
+
+- Application theme.
+
 ## 1.5.0
 
 - Password strength meter.

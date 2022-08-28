@@ -20,8 +20,8 @@ import 'package:flutter/services.dart';
 import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 
 class AppTheme {
-  static const lightTheme = 'light';
-  static const darkTheme = 'dark';
+  static const light = 'light';
+  static const dark = 'dark';
 
   static ThemeData _buildDarkTheme() {
     final ThemeData base = ThemeData.dark();
@@ -48,13 +48,13 @@ class AppTheme {
   }
 
   static setOverlayStyle(String themeName) {
-    var style = (themeName == darkTheme)
+    var style = (themeName == dark)
         ? SystemUiOverlayStyle.dark
         : SystemUiOverlayStyle.light;
     SystemChrome.setSystemUIOverlayStyle(style);
   }
 
   static build(String themeName) {
-    return (themeName == darkTheme) ? _buildDarkTheme() : _buildLightTheme();
+    return (themeName == dark) ? _buildDarkTheme() : _buildLightTheme();
   }
 }

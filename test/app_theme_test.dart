@@ -22,18 +22,18 @@ import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 
 void main() {
   test('Build light theme', () {
-    ThemeData theme = AppTheme.build(AppTheme.lightTheme);
+    ThemeData theme = AppTheme.build(AppTheme.light);
     expect(theme.backgroundColor, const Color(0xFF90CAF9));
   });
 
   test('Build dark theme', () {
-    ThemeData theme = AppTheme.build(AppTheme.darkTheme);
+    ThemeData theme = AppTheme.build(AppTheme.dark);
     expect(theme.backgroundColor, const Color(0xff616161));
   });
 
   test('Set overlay style', () {
     WidgetsFlutterBinding.ensureInitialized();
-    AppTheme.setOverlayStyle(AppTheme.darkTheme);
+    AppTheme.setOverlayStyle(AppTheme.dark);
     expect(SystemChrome.latestStyle, null);
   });
 }
