@@ -59,4 +59,11 @@ class UI {
     return style
         .merge(TextStyle(color: Theme.of(context).textTheme.caption!.color!));
   }
+
+  static showSnackbar(BuildContext context, String text) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(text),
+      duration: const Duration(seconds: 2),
+    ));
+  }
 }
