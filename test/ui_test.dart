@@ -48,5 +48,35 @@ void main() {
 
     UI.isDesktop = false;
     expect(UI.listTitleFontSize(mockContext), 16);
+
+    // UI.showSnackbar(mockContext, 'snack bar message');
+    // expect(mockContext.takeException(), isInstanceOf<UnrecognizedTermException>());
+  });
+
+  testWidgets('Snack bar', (WidgetTester tester) async {
+    const String text = 'Hi';
+    const Key tapTarget = Key('tap-target');
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: Builder(builder: (BuildContext context) {
+          return GestureDetector(
+            onTap: () {
+              UI.showSnackbar(context, text);
+            },
+            behavior: HitTestBehavior.opaque,
+            child: const SizedBox(
+              height: 100.0,
+              width: 100.0,
+              key: tapTarget,
+            ),
+          );
+        }),
+      ),
+    ));
+    expect(find.text(text), findsNothing);
+    await tester.tap(find.byKey(tapTarget), warnIfMissed: false);
+    expect(find.text(text), findsNothing);
+    await tester.pump(); // schedule animation
+    expect(find.text(text), findsOneWidget);
   });
 }
