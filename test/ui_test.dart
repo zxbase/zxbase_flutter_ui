@@ -48,9 +48,7 @@ void main() {
 
     UI.isDesktop = false;
     expect(UI.listTitleFontSize(mockContext), 16);
-
-    // UI.showSnackbar(mockContext, 'snack bar message');
-    // expect(mockContext.takeException(), isInstanceOf<UnrecognizedTermException>());
+    expect(UI.testEnvironment, true);
   });
 
   testWidgets('Snack bar', (WidgetTester tester) async {

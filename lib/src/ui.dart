@@ -19,6 +19,8 @@ class UI {
   /// System.
   static final bool isMobile = Platform.isIOS || Platform.isAndroid;
   static bool isDesktop = !isMobile;
+  static bool testEnvironment =
+      Platform.environment.containsKey('FLUTTER_TEST');
 
   /// Fonts.
   static final double fontSizeXSmall = isDesktop ? 10 : 12;
