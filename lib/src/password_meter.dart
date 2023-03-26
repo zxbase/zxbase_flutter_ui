@@ -40,7 +40,7 @@ class PasswordMeter {
   static Widget caption(int index, BuildContext context) {
     TextStyle captionStyle = Theme.of(context)
         .textTheme
-        .caption!
+        .bodySmall!
         .copyWith(color: Theme.of(context).hintColor);
     TextStyle assessmentStyle =
         Theme.of(context).textTheme.titleSmall!.copyWith(color: _color[index]);

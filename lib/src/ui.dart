@@ -49,7 +49,7 @@ class UI {
   }
 
   static double? listSubtitleFontSize(BuildContext context) {
-    return Theme.of(context).textTheme.subtitle2!.fontSize;
+    return Theme.of(context).textTheme.titleSmall!.fontSize;
   }
 
   static TextStyle listTrailingTextStyle(
@@ -59,7 +59,7 @@ class UI {
       return style;
     }
     return style
-        .merge(TextStyle(color: Theme.of(context).textTheme.caption!.color!));
+        .merge(TextStyle(color: Theme.of(context).textTheme.bodySmall!.color!));
   }
 
   static showSnackbar(BuildContext context, String text) {

@@ -15,7 +15,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
 // ignore: implementation_imports
-import 'package:flutter_advanced_avatar/src/string_util.dart';
+import 'package:flutter_advanced_avatar/src/string_extension.dart';
 import 'package:zxbase_flutter_ui/src/ui.dart';
 
 enum AvatarStatus { unknown, offline, online }
