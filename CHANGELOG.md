@@ -1,3 +1,8 @@
+## 1.8.0
+
+- Add Location Marker.
+- Bump Fluter to 3.10, Dart to 3.
+
 ## 1.6.0
 
 - Application theme.
