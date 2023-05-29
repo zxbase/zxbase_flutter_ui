@@ -8,8 +8,10 @@ Shared UI components.
 ## Features
 
 - Avatar.
+- Current location marker.
 - Desktop / mobile detection.
 - Fonts.
+- History controlller for undo/redo operations.
 - Human date and time representation.
 - Password strength meter.
 
@@ -18,7 +20,7 @@ Shared UI components.
 In _pubspec.yaml_:
 ```yaml
 dependencies:
-  zxbase_flutter_ui: ^1.0.0
+  zxbase_flutter_ui: ^1.8.0
 ```
 
 In your code:
@@ -30,6 +32,8 @@ import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 
 Check examples in test files:
   - test/avatar_test.dart
+  - test/history_controller_test.dart
   - test/human_time_test.dart
+  - test/location_marker_test.dart
   - test/password_meter_test.dart
   - test/ui_test.dart
