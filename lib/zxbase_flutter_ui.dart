@@ -18,5 +18,6 @@ export 'src/app_theme.dart';
 export 'src/avatar.dart';
 export 'src/history_controller.dart';
 export 'src/human_time.dart';
+export 'src/location_marker.dart';
 export 'src/password_meter.dart';
 export 'src/ui.dart';
