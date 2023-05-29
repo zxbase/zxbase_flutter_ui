@@ -27,7 +27,7 @@ void main() {
     final peerAvatar = Avatar.peer(name: name, status: AvatarStatus.online);
     expect(peerAvatar.name, name);
     expect(peerAvatar.children.length, 2);
-    expect(peerAvatar.decoration!.color, Colors.cyan);
+    expect(peerAvatar.decoration.color, Colors.cyan);
     expect(peerAvatar.children[0].runtimeType, Container);
   });
 
@@ -45,7 +45,7 @@ void main() {
     final peerAvatar = Avatar.peer(name: name, status: AvatarStatus.online);
     expect(peerAvatar.name, 'John Doe');
     expect(peerAvatar.children.length, 2);
-    expect(peerAvatar.decoration!.color, Colors.red);
+    expect(peerAvatar.decoration.color, Colors.red);
     expect(peerAvatar.children[0].runtimeType, Container);
   });
 
@@ -54,7 +54,7 @@ void main() {
     final peerAvatar = Avatar.peer(name: name, status: AvatarStatus.online);
     expect(peerAvatar.name, name);
     expect(peerAvatar.children.length, 2);
-    expect(peerAvatar.decoration!.color, Colors.cyan);
+    expect(peerAvatar.decoration.color, Colors.cyan);
     expect(peerAvatar.children[0].runtimeType, Container);
   });
 
@@ -63,7 +63,7 @@ void main() {
     final peerAvatar = Avatar.peer(name: name, status: AvatarStatus.online);
     expect(peerAvatar.name, name);
     expect(peerAvatar.children.length, 2);
-    expect(peerAvatar.decoration!.color, Colors.purple);
+    expect(peerAvatar.decoration.color, Colors.purple);
     expect(peerAvatar.children[0].runtimeType, Container);
   });
 }
