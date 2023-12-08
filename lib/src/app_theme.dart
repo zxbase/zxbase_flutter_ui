@@ -23,8 +23,8 @@ class AppTheme {
   static const light = 'light';
   static const dark = 'dark';
 
-  static ThemeData _buildDarkTheme() {
-    final ThemeData base = ThemeData.dark();
+  static ThemeData _buildDarkTheme({bool useMaterial3 = false}) {
+    final ThemeData base = ThemeData.dark(useMaterial3: useMaterial3);
 
     return base.copyWith(
       appBarTheme: const AppBarTheme(
@@ -34,8 +34,8 @@ class AppTheme {
     );
   }
 
-  static ThemeData _buildLightTheme() {
-    final ThemeData base = ThemeData.light();
+  static ThemeData _buildLightTheme({bool useMaterial3 = false}) {
+    final ThemeData base = ThemeData.light(useMaterial3: useMaterial3);
 
     return base.copyWith(
         appBarTheme: base.appBarTheme.copyWith(
