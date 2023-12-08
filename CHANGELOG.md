@@ -1,3 +1,8 @@
+## 1.8.1
+
+- Disable Material 3 by default.
+- Bump flutter_lints and add library clauses.
+
 ## 1.8.0
 
 - Add Location Marker.
