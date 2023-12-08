@@ -24,6 +24,8 @@
 /// Use undo() to go back to previously recorded state.
 /// Use redo() to apply previously undone state.
 
+library;
+
 import 'package:flutter/material.dart';
 
 class LimitedStack<T> {

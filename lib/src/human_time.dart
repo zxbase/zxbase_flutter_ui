@@ -14,6 +14,8 @@
 
 /// Date and time representation UI.
 
+library;
+
 import 'package:intl/intl.dart';
 import 'package:timeago/timeago.dart' as timeago;
 

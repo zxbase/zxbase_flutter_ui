@@ -15,6 +15,8 @@
 /// Password meter with a progress bar.
 /// Based on password score in the range [0,4] and length.
 
+library;
+
 import 'package:flutter/material.dart';
 
 class PasswordMeter {
