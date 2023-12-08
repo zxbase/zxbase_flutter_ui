@@ -15,6 +15,8 @@
 /// Theme helpers.
 /// Support light and dark theme.
 
+library;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
