@@ -77,16 +77,22 @@ class HumanTime {
     return '${dt.timeZoneName} (${dt.timeZoneOffset.inHours})';
   }
 
+  static bool isToday(DateTime dt) {
+    DateTime now = DateTime.now();
+    return DateTime(now.year, now.month, now.day) ==
+        DateTime(dt.year, dt.month, dt.day);
+  }
+
   /// Today: 12:00:00 AM
   /// This year: August 9 12:00:00 AM
   /// Previous years: August 9, 2021 12:00:00 AM
   static String preciseTime(DateTime dt) {
     String time = DateFormat('hh:mm:ss a').format(dt).toString();
 
-    if (DateTime.now().day != dt.day) {
-      return '${shortDate(dt)} $time';
-    } else {
+    if (isToday(dt)) {
       return time;
+    } else {
+      return '${shortDate(dt)} $time';
     }
   }
 }
