@@ -1,4 +1,4 @@
-// Copyright (C) 2022 Zxbase, LLC. All Rights Reserved.
+// Copyright (C) 2022 - 2024 Zxbase, LLC. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -79,8 +79,12 @@ class HumanTime {
 
   static bool isToday(DateTime dt) {
     DateTime now = DateTime.now();
-    return DateTime(now.year, now.month, now.day) ==
-        DateTime(dt.year, dt.month, dt.day);
+    try {
+      return DateTime(now.year, now.month, now.day) ==
+          DateTime(dt.year, dt.month, dt.day);
+    } catch (e) {
+      return false;
+    }
   }
 
   /// Today: 12:00:00 AM

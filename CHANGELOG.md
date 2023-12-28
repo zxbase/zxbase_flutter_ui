@@ -1,3 +1,7 @@
+## 1.8.4
+
+- Fix human isToday to handle minimal time converted to local.
+
 ## 1.8.3
 
 - Fix human preciseTime.
