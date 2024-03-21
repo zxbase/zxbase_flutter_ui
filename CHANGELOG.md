@@ -1,3 +1,7 @@
+## 1.8.5
+
+- Bump intl package version to 0.19.0
+
 ## 1.8.4
 
 - Fix human isToday to handle minimal time converted to local.
