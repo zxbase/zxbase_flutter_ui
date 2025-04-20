@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library zxbase_flutter_ui;
+library;
 
 export 'src/app_theme.dart';
 export 'src/avatar.dart';
