@@ -62,7 +62,7 @@ class UI {
         .merge(TextStyle(color: Theme.of(context).textTheme.bodySmall!.color!));
   }
 
-  static showSnackbar(BuildContext context, String text) {
+  static void showSnackbar(BuildContext context, String text) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(text),
       duration: const Duration(seconds: 2),

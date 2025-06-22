@@ -20,12 +20,12 @@ import 'package:zxbase_flutter_ui/zxbase_flutter_ui.dart';
 void main() {
   test('Build light theme', () {
     ThemeData theme = AppTheme.build(AppTheme.light);
-    expect(theme.colorScheme.surface, const Color(0xFF90CAF9));
+    expect(theme.colorScheme.surface, const Color(0xFFFFFFFF));
   });
 
   test('Build dark theme', () {
     ThemeData theme = AppTheme.build(AppTheme.dark);
-    expect(theme.colorScheme.surface, const Color(0xff616161));
+    expect(theme.colorScheme.surface, const Color(0xFF424242));
   });
 
   test('Set overlay style', () {

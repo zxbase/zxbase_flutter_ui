@@ -49,14 +49,14 @@ class AppTheme {
                 UI.isMobile ? Colors.grey.shade100 : Colors.transparent));
   }
 
-  static setOverlayStyle(String themeName) {
+  static void setOverlayStyle(String themeName) {
     var style = (themeName == dark)
         ? SystemUiOverlayStyle.dark
         : SystemUiOverlayStyle.light;
     SystemChrome.setSystemUIOverlayStyle(style);
   }
 
-  static build(String themeName) {
+  static ThemeData build(String themeName) {
     return (themeName == dark) ? _buildDarkTheme() : _buildLightTheme();
   }
 }

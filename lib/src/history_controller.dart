@@ -104,11 +104,11 @@ class HistoryController extends TextEditingController {
   late StateHistory stateHistory;
 
   // record the current state
-  save() {
+  void save() {
     stateHistory.update(ControllerState(text: text, selection: selection));
   }
 
-  undo() {
+  void undo() {
     if (!stateHistory.canUndo) {
       return;
     }
@@ -117,7 +117,7 @@ class HistoryController extends TextEditingController {
     selection = item.selection;
   }
 
-  redo() {
+  void redo() {
     if (!stateHistory.canRedo) {
       return;
     }

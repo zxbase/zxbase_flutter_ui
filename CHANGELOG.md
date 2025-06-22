@@ -1,3 +1,8 @@
+## 1.8.7
+
+- Update lints, address linter warnings.
+- Update intl.
+
 ## 1.8.5
 
 - Bump intl package version to 0.19.0

@@ -45,7 +45,7 @@ void main() {
     expect(UI.listSubtitleFontSize(mockContext), 14);
     expect(UI.listTrailingTextStyle(mockContext, true).color, null);
     expect(UI.listTrailingTextStyle(mockContext, false).color,
-        const Color(0xff1c1b1f));
+        const Color(0xFF1D1B20));
 
     UI.isDesktop = false;
     expect(UI.listTitleFontSize(mockContext), 16);
